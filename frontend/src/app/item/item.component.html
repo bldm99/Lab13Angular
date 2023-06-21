@@ -1,0 +1,118 @@
+<div class="cont">
+  
+
+
+
+  <!-- Formulario para crear/editar un item -->
+  <!--<form (ngSubmit)="currentItem._id ? updateItem(currentItem._id, currentItem) : createItem(currentItem)">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" [(ngModel)]="currentItem.name" name="name" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" class="form-control" [(ngModel)]="currentItem.description" name="description" required>
+      </div>
+
+      <div class="form-group">
+        <label for="imagen">Imagen:</label>
+        <input type="text" class="form-control" [(ngModel)]="currentItem.imagen" name="imagen" required="true">
+      </div>
+  
+      <button type="submit" class="btn btn-primary">{{currentItem._id ? 'Update' : 'Add'}}</button>
+    </form>-->
+  <div class="card-form">
+  
+    <div class="for">
+      <h3>Registrar Pelicula</h3>
+      <form [formGroup]="form"
+        (ngSubmit)="currentItem?._id ? updateItem(currentItem?._id, form.value) : createItem(form.value)">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" formControlName="name" [required]="true" placeholder="Nombre de pelicula">
+          <div *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)"
+            class="error-message">
+            <span *ngIf="form.get('name')?.errors?.['required']">El nombre es requerido.</span>
+            <span *ngIf="form.get('name')?.errors?.['minlength']">El nombre debe tener al menos 5 caracteres.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <input type="text" class="form-control" formControlName="description" [required]="true" placeholder="Descripcion de pelicula">
+          <div
+            *ngIf="form.get('description')?.invalid && (form.get('description')?.dirty || form.get('description')?.touched)"
+            class="error-message">
+            <span *ngIf="form.get('description')?.errors?.['required']">La descripcion es requerida</span>
+            <span *ngIf="form.get('description')?.errors?.['minlength']">La descripcion debe tener al menos 5
+              caracteres.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="imagen">Imagen:</label>
+          <input type="text" class="form-control" formControlName="imagen" [required]="true" placeholder="Imagen URL">
+          <div *ngIf="form.get('imagen')?.invalid && (form.get('imagen')?.dirty || form.get('imagen')?.touched)"
+            class="error-message">
+            <span *ngIf="form.get('imagen')?.errors?.['required']">El campo imagen es requerido.</span>
+            <span *ngIf="form.get('imagen')?.errors?.['minlength']">La descripcion debe tener al menos 5
+              caracteres.</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">{{currentItem?._id ? 'Update' :
+          'REGISTRAR PELICULA'}}</button>
+      </form>
+    </div>
+
+  </div>
+
+
+
+
+
+  <hr>
+
+  <!-- Lista de items -->
+  <!--<table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td>
+          <button class="btn btn-sm btn-primary" (click)="editItem(item._id)">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="openDeleteConfirmation(item._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>-->
+
+
+  <div class="imagenes">
+
+    <div class="img-container">
+
+      <div class="card-img" *ngFor="let item of items">
+        <img src='{{ item.imagen }}' alt="">
+        <h5>{{ item.name }}</h5>
+        <h5>{{ item.description }}</h5>
+        <div class="iconos">
+          <mat-icon (click)="editItem(item._id)">edit</mat-icon>
+          <mat-icon (click)="openDeleteConfirmation(item._id)">delete</mat-icon>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

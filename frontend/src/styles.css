@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.toast-top-center {
+
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  
+}
+
+.toast-success-agregar {
+  background: rgb(9, 197, 56);
+  font-weight: bold;
+  width: 30%;
+  border-radius: 15px;
+}
+.toast-success-eliminar {
+  background: rgb(221, 38, 53);
+  font-weight: bold;
+  width: 30%;
+  border-radius: 15px;
+}
+
+
+.toast-title-success {
+  color: rgb(250, 249, 249);
+  /* Color del título de la notificación de éxito */
+}
+
+.toast-message-success {
+  color: rgb(255, 255, 255);
+  /* Color del mensaje de la notificación de éxito */
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,42 @@
+
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    padding:   10px;
+  }
+  
+  .card-modal {
+    background: rgb(184, 177, 177);
+    width: 50%;
+    height: 200px;
+    border-radius: 4px;
+  }
+  
+  .contenido-modal {
+    text-align: center;
+  }
+
+  .contenido-modal button{
+    background: blueviolet;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 12px;
+    color: wheat;
+
+  }
+
+  .btn{
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+ 
